@@ -23,12 +23,12 @@ Next.js Issue Tracker is a modern web application designed to streamline task ma
 To get started with Next.js Issue Tracker, follow these steps:
 
 1. **Clone the repository:**
-   `git clone <repository-url>`
+   `git clone https://github.com/grunsho/issue-tracker.git`
 
 2. **Install dependencies:**
 
    ```
-   cd nextjs-issue-tracker
+   cd issue-tracker
    npm install
    ```
 
