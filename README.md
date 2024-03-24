@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Issue Tracker
+
+Next.js Issue Tracker is a modern web application designed to streamline task management and project collaboration. Built with Next.js, TypeScript, Prisma, TailwindCSS, and Radix UI, this application offers a robust platform for teams to track, prioritize, and resolve issues effectively.
+
+## Features
+
+- **Intuitive Interface:** Enjoy a user-friendly interface that facilitates easy navigation and task management.
+- **Customizable Issue Boards:** Organize tasks with customizable issue boards tailored to your project's workflow.
+- **Real-time Collaboration:** Collaborate seamlessly with team members in real-time, ensuring everyone stays updated on project progress.
+- **Advanced Search and Filtering:** Quickly find and filter issues based on various criteria to focus on what matters most.
+- **Responsive Design:** Access the issue tracker from any device with a responsive design that adapts to different screen sizes.
+
+## Technologies Used
+
+- **Next.js:** Utilize the power of Next.js for server-side rendering and efficient client-side navigation.
+- **TypeScript:** Enhance code quality and maintainability with TypeScript's static typing.
+- **Prisma:** Manage database operations seamlessly with Prisma, offering type-safe database access and migrations.
+- **TailwindCSS:** Utilize TailwindCSS for rapid UI development with its utility-first approach.
+- **Radix UI:** Leverage Radix UI for building accessible and customizable UI components.
 
 ## Getting Started
 
-First, run the development server:
+To get started with Next.js Issue Tracker, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. **Clone the repository:**
+   `git clone <repository-url>`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ````cd nextjs-issue-tracker
+   npm install```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ````
 
-## Learn More
+3. **Set up environment variables:**
 
-To learn more about Next.js, take a look at the following resources:
+- Create a `.env` file in the root directory.
+- Add environment variables as specified in `.env.example`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Run the application:**
+   `npm run dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. **Access the application:**
+   Open your browser and navigate to `http://localhost:3000`.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Feel free to submit bug reports, feature requests, or pull requests to help improve Next.js Issue Tracker.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the [MIT License](LICENSE).
