@@ -15,5 +15,7 @@
 }
 
 body {
-  /* color: rgb(var(--foreground-rgb)); */
+  --default-font-family: var(
+    --font-inter
+  ); /* color: rgb(var(--foreground-rgb)); */
 }
