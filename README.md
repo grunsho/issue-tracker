@@ -27,10 +27,10 @@ To get started with Next.js Issue Tracker, follow these steps:
 
 2. **Install dependencies:**
 
-   ````cd nextjs-issue-tracker
-   npm install```
-
-   ````
+   ```
+   cd nextjs-issue-tracker
+   npm install
+   ```
 
 3. **Set up environment variables:**
 
