@@ -1,32 +1,41 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Button, TextField, Callout } from "@radix-ui/themes";
+import { Button, TextField, Callout, Text } from "@radix-ui/themes";
 import { useForm, Controller } from "react-hook-form";
 import "easymde/dist/easymde.min.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { createIssueSchema } from "@/app/validationSchemas";
+import { z } from "zod";
 
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
     ssr: false,
 });
 
-interface IssueForm {
-    title: string;
-    description: string;
-}
+type IssueForm = z.infer<typeof createIssueSchema>;
 
 const NewIssuePage = () => {
     const router = useRouter();
-    const { register, control, handleSubmit } = useForm<IssueForm>();
+    const {
+        register,
+        control,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<IssueForm>({
+        resolver: zodResolver(createIssueSchema),
+    });
     const [error, setError] = useState("");
 
     return (
         <div className="max-w-xl">
-            {error && <Callout.Root color="red" className="mb-5">
-                <Callout.Text>{error}</Callout.Text>
-            </Callout.Root>}
+            {error && (
+                <Callout.Root color="red" className="mb-5">
+                    <Callout.Text>{error}</Callout.Text>
+                </Callout.Root>
+            )}
             <form
                 className="space-y-3"
                 onSubmit={handleSubmit(async (data) => {
@@ -39,6 +48,7 @@ const NewIssuePage = () => {
                 })}
             >
                 <TextField.Root placeholder="Title" {...register("title")} />
+                {errors.title && <p><Text color="red">{errors.title.message}</Text></p>}
                 <Controller
                     name="description"
                     control={control}
@@ -46,6 +56,7 @@ const NewIssuePage = () => {
                         <SimpleMDE placeholder="Description" {...field} />
                     )}
                 />
+                {errors.description && <p><Text color="red">{errors.description.message}</Text></p>}
                 <Button>Submit New Issue</Button>
             </form>
         </div>
